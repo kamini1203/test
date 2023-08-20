@@ -1,0 +1,5 @@
+{{#kamini1203}}
+Name: Kamini Kumari
+Skills: HTML, DSA, Python, C
+Email: kaminikumari5157@gmail.com
+{{/kamini1203}}
