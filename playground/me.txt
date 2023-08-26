@@ -1,0 +1,14 @@
+c1=pp.Suppress("{{"+pp.SkipTo("}}")+"}}")
+c2=pp.Suppress(pp.SkipTo("{{"))
+def format_chat_template(input_text):
+    if "{{gen" not in input_text:
+        input_text+="{{gen 'write'}}"
+    format_template="{{#assistant}}\n{}{{/assistant}}".format(c2.transform_string(input_text))
+    
+    format_template="{{#user}}\n{}{{/user}}\n".format(c1.transform_string(input_text))+format_template
+    print(format_template)
+
+
+input=["how are things going, tell me about delhi","Tweak this proverb to apply to model instructions instead. Where there is no guidance{{gen 'rewrite'}}"]
+for text in input:
+    format_chat_template(text)
