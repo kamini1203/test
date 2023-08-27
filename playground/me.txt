@@ -1,5 +1,8 @@
 c1=pp.Suppress("{{"+pp.SkipTo("}}")+"}}")
 c2=pp.Suppress(pp.SkipTo("{{"))
+
+
+
 def format_chat_template(input_text):
     if "{{gen" not in input_text:
         input_text+="{{gen 'write'}}"
